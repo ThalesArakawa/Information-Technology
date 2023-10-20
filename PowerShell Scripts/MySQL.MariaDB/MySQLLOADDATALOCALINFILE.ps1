@@ -34,8 +34,3 @@ $sql.CommandText='LOAD DATA LOCAL INFILE "'+$csvPath.replace("\","\\")+'" REPLAC
 #
 $sql.ExecuteNonQuery()
 $Connection.Close()
-
-$ips | ForEach-Object { 
-    $filter='IPv4Addres -eq "'+$_+'"'
-    Get-ADComputer -Filter $filter
-}
